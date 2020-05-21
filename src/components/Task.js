@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Task = () => {
+const Task = ({ task }) => {
 	return (
 		<li className="list-item">
-			<span>Task Title</span>
+			<span>{task.title}</span>
 			<div>
-				<button className="btn-delete task-btn">
+				<button className="btn-delete task-btn" style={{marginRight: "10px"}}>
 					<i className="fas fa-trash-alt"></i>
 				</button>
 				<button className="btn-edit task-btn">

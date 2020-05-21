@@ -5,15 +5,15 @@ export const TaskListContext = createContext();
 const TaskListContextProvider = props => {
 	const [tasks, setTask] = useState([
 		{
-			task: "Read a Book",
+			title: "Read a Book",
 			id: 1
 		},
 		{
-			task: "Find a Girlfriend",
+			title: "Find a Girlfriend",
 			id: 2
 		},
 		{
-			task: "Wash the card",
+			title: "Wash the card",
 			id: 3
 		}
 	]);

@@ -27,7 +27,7 @@ const TaskForm = () => {
 			/>
 			<div className="buttons">
 				<button className="btn add-task-btn" type="submit"> Add Task </button>
-				<button className="btn clear-btn"> Clear </button>
+				<button className="btn clear-btn" onClick={() => setTitle("")} type="button"> Clear </button>
 			</div>
 		</form>
 	)

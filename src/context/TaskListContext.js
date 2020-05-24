@@ -19,6 +19,8 @@ const TaskListContextProvider = props => {
 		}
 	]);
 
+	const [ editItem, setEditItem ] = useState(null);
+
 	// Adding task functionality
 	const addTask = (title) => {
 		setTask([...tasks, {title, id:uuid()}])
@@ -32,8 +34,19 @@ const TaskListContextProvider = props => {
 		setTask([]);
 	}
 
+	const findItem = id => {
+		const item = tasks.find(task => task.id === id);
+		setEditItem(item);
+	}
+
+	const editTask = (title, id) => {
+		const newTasks = tasks.map(task => (task.id === id ? {title, id} : task))
+		setTask(newTasks);
+		setEditItem(null);
+	}
+
 	return (
-		<TaskListContext.Provider value={{tasks, addTask, removeTask, clearList}}>
+		<TaskListContext.Provider value={{tasks, addTask, removeTask, clearList, findItem, editTask, editItem}}>
 			{props.children}
 		</TaskListContext.Provider>
 	)
